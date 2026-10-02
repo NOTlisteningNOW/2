@@ -1,0 +1,42 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<span class:list={["site-logo", className]} aria-hidden="true">
+  <span class="site-logo-promp">Promp</span>
+  <span class="site-logo-game">Game</span>
+  <span class="site-logo-time">Time</span>
+</span>
+
+<style>
+  .site-logo {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.3em;
+    font-family: var(--font-special-elite);
+    font-weight: 400;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .site-logo-promp {
+    color: #009b77; /* emerald green */
+  }
+
+  .site-logo-game {
+    color: #1e90b4; /* lake blue */
+  }
+
+  .site-logo-time {
+    color: #000;
+  }
+
+  /* Keep "Time" readable on the dark background */
+  :global(html[data-theme="dark"]) .site-logo-time {
+    color: #f5f5f5;
+  }
+</style>
