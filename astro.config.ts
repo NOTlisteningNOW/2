@@ -145,5 +145,18 @@ export default defineConfig({
         ],
       },
     },
+    {
+      name: "Special Elite",
+      cssVariable: "--font-special-elite",
+      fallbacks: ["Courier New", "monospace"],
+      provider: fontProviders.local(),
+      options: {
+        variants: [
+          {
+            src: ["./src/assets/fonts/special-elite.woff2"],
+          },
+        ],
+      },
+    },
   ],
 });
